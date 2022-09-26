@@ -5,6 +5,7 @@ import { List } from "./components/List";
 import NuKenzie from "./assets/NuKenzie.svg";
 import { TotalMoney } from "./components/TotalMoney";
 import { LandingPage } from "./components/LandingPage";
+import "../src/global.css";
 
 function App() {
   const [listTransactions, setListTransactions] = useState([]);
