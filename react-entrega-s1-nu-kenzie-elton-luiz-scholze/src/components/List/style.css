@@ -82,11 +82,11 @@ img {
     overflow-y: auto;
   }
 
-  .container__list div {
+  .container__list > div {
     display: flex;
     flex-direction: row;
     max-width: 80%;
-    margin: 0 auto;
+    margin: 0 auto 1.5rem auto;
   }
 
   .container__list div nav {
