@@ -6,6 +6,7 @@ import NuKenzie from "./assets/NuKenzie.svg";
 
 function App() {
   const [listTransactions, setListTransactions] = useState([]);
+  const [filter, setFilter] = useState("");
 
   return (
     <div className="App">
@@ -21,6 +22,8 @@ function App() {
         <List
           listTransactions={listTransactions}
           setListTransactions={setListTransactions}
+          setFilter={setFilter}
+          filter={filter}
         />
       </main>
     </div>

@@ -1,7 +1,12 @@
 import imgLixeira from "../../assets/trash.svg";
 import noCard from "../../assets/NoCard.svg";
 
-export function List({ listTransactions, setListTransactions }) {
+export function List({
+  listTransactions,
+  setListTransactions,
+  setFilter,
+  filter,
+}) {
   function deleteTransaction(index) {
     const transactionFiltered = listTransactions.filter(
       (transaction, transactionIndex) => transactionIndex !== index
@@ -9,10 +14,28 @@ export function List({ listTransactions, setListTransactions }) {
     setListTransactions(transactionFiltered);
   }
 
+  const transactionFiltered = listTransactions.filter((transaction) =>
+    filter === "" ? true : transaction.type === filter
+  );
+
   return (
     <ul>
+      <div>
+        <h3>Resumo financeiro</h3>
+        <nav>
+          <button type="button" onClick={() => setFilter("")}>
+            Todos
+          </button>
+          <button type="button" onClick={() => setFilter("Entrada")}>
+            Entradas
+          </button>
+          <button type="button" onClick={() => setFilter("Despesa")}>
+            Despesas
+          </button>
+        </nav>
+      </div>
       {listTransactions.length ? (
-        listTransactions.map((transaction, index) => (
+        transactionFiltered.map((transaction, index) => (
           <li key={index}>
             <div>
               <p>{transaction.description}</p>
