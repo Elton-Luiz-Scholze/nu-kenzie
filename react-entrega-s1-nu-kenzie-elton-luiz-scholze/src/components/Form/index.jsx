@@ -17,7 +17,7 @@ export function Form({ listTransactions, setListTransactions }) {
 
     if (
       operation.description !== "" &&
-      operation.value !== "" &&
+      operation.value !== 0 &&
       operation.type !== ""
     ) {
       setListTransactions([...listTransactions, operation]);
@@ -25,7 +25,7 @@ export function Form({ listTransactions, setListTransactions }) {
 
     setOperation({
       description: "",
-      type: "",
+      type: operation.type,
       value: 0,
     });
   }
@@ -66,7 +66,7 @@ export function Form({ listTransactions, setListTransactions }) {
             }
             defaultValue={operation.type}
           >
-            <option value="">Selecione...</option>
+            <option value="Selecione">Selecione...</option>
             <option value="Entrada">Entrada</option>
             <option value="Despesa">Despesa</option>
           </select>
