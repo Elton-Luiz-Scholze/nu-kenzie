@@ -33,5 +33,15 @@
 @media (min-width: 768px) {
   .container {
     display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .container section {
+    width: 50%;
+  }
+
+  .container aside {
+    width: 60%;
   }
 }

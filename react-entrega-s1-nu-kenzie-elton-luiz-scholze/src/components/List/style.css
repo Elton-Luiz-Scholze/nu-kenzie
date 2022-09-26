@@ -1,4 +1,95 @@
+.container__list {
+  width: 90%;
+  margin: 1rem auto 0 auto;
+}
+
+.container__list div {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.container__list div nav > button:nth-child(1) {
+  margin: 0 0.8rem;
+  background-color: var(--color-primary);
+  color: var(--grey-1);
+  width: max-content;
+}
+
+.container__list button {
+  width: max-content;
+  height: 35px;
+  margin: 0 0.8rem;
+  border-radius: 8px;
+  border: none;
+  background-color: var(--grey-2);
+  color: var(--grey-4);
+  cursor: pointer;
+}
+
+.container__list li {
+  display: flex;
+  align-items: center;
+  width: 90%;
+  margin: 1rem auto;
+  height: 90px;
+  border-radius: 8px;
+  background-color: var(--grey-1);
+}
+
+.container__list li div {
+  margin: 0;
+  padding-left: 2rem;
+  text-align: left;
+}
+
+.container__list h3 {
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.container__list li div p {
+  font-weight: 400;
+  font-size: 0.75rem;
+}
+
+.container__list li div:nth-child(2) {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: end;
+  gap: 2rem;
+}
+
+.container__list li div:nth-child(2) > button {
+  width: 25px;
+  width: 25px;
+  background-color: var(--grey-2);
+  cursor: pointer;
+}
+
 img {
   width: 80%;
   margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .container__list {
+    max-width: 100%;
+    max-height: 420px;
+    overflow-y: auto;
+  }
+
+  .container__list div {
+    display: flex;
+    flex-direction: row;
+    max-width: 80%;
+    margin: 0 auto;
+  }
+
+  .container__list div nav {
+    display: flex;
+  }
 }
