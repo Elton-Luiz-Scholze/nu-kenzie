@@ -1,5 +1,6 @@
 import imgLixeira from "../../assets/trash.svg";
 import noCard from "../../assets/NoCard.svg";
+import "./style.css";
 
 export function List({
   listTransactions,

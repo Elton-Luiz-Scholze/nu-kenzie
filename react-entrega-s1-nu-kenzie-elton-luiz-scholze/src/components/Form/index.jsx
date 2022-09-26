@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "./style.css";
 
 export function Form({ listTransactions, setListTransactions }) {
   const [operation, setOperation] = useState({
@@ -30,7 +31,7 @@ export function Form({ listTransactions, setListTransactions }) {
   }
 
   return (
-    <form onSubmit={(event) => handleSubmit(event)}>
+    <form className="container__form" onSubmit={(event) => handleSubmit(event)}>
       <label htmlFor="inputDescription">Descrição</label>
       <input
         type="text"
@@ -43,31 +44,33 @@ export function Form({ listTransactions, setListTransactions }) {
         }
       />
       <span>Ex.: Compra de roupas</span>
-      <div>
-        <label htmlFor="inputNumber">Valor</label>
-        <input
-          type="number"
-          name="inputValue"
-          id="inputValue"
-          value={operation.value}
-          onChange={(event) =>
-            setOperation({ ...operation, value: event.target.value })
-          }
-        />
-        <p>R$</p>
-      </div>
-      <div>
-        <label htmlFor="inputTipeValue">Tipo de valor</label>
-        <select
-          onChange={(event) =>
-            setOperation({ ...operation, type: event.target.value })
-          }
-          defaultValue={operation.type}
-        >
-          <option value="">Selecione...</option>
-          <option value="Entrada">Entrada</option>
-          <option value="Despesa">Despesa</option>
-        </select>
+      <div className="container__input">
+        <div>
+          <label htmlFor="inputNumber">Valor</label>
+          <input
+            type="number"
+            name="inputValue"
+            id="inputValue"
+            value={operation.value}
+            onChange={(event) =>
+              setOperation({ ...operation, value: event.target.value })
+            }
+          />
+          <p>R$</p>
+        </div>
+        <div>
+          <label htmlFor="inputTipeValue">Tipo de valor</label>
+          <select
+            onChange={(event) =>
+              setOperation({ ...operation, type: event.target.value })
+            }
+            defaultValue={operation.type}
+          >
+            <option value="">Selecione...</option>
+            <option value="Entrada">Entrada</option>
+            <option value="Despesa">Despesa</option>
+          </select>
+        </div>
       </div>
       <button type="submit">Inserir valor</button>
     </form>
