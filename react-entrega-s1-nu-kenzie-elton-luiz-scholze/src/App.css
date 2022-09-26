@@ -1,3 +1,47 @@
 .App {
   text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+.App-header {
+  width: 100vw;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  box-shadow: 0px 1px 4px 0px;
+}
+
+.App-header img {
+  width: 150px;
+  height: 40px;
+}
+
+.App-header > button {
+  border: none;
+  border-radius: 8px;
+  height: 35px;
+  width: 80px;
+  background-color: var(--grey-1);
+  color: var(--grey-4);
+  cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  .container {
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .container section {
+    width: 50%;
+  }
+
+  .container aside {
+    width: 60%;
+  }
 }
