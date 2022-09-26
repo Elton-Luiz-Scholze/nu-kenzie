@@ -68,7 +68,8 @@
 
 @media (min-width: 768px) {
   .container__form {
-    max-width: 50%;
+    max-width: 80%;
+    margin: 0 auto;
   }
 
   .container__form button:hover {

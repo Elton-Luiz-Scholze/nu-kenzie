@@ -20,7 +20,7 @@ export function List({
   );
 
   return (
-    <ul>
+    <ul className="container__list">
       <div>
         <h3>Resumo financeiro</h3>
         <nav>
@@ -39,11 +39,11 @@ export function List({
         transactionFiltered.map((transaction, index) => (
           <li key={index}>
             <div>
-              <p>{transaction.description}</p>
-              <span>{transaction.type}</span>
+              <h3>{transaction.description}</h3>
+              <p>{transaction.type}</p>
             </div>
             <div>
-              <p>{transaction.value}</p>
+              <p>R$ {transaction.value}</p>
               <button onClick={() => deleteTransaction(index)}>
                 <img src={imgLixeira} alt="" />
               </button>
@@ -51,7 +51,10 @@ export function List({
           </li>
         ))
       ) : (
-        <img src={noCard} alt="" />
+        <>
+          <h3>Você ainda não possui nenhum lançamento</h3>
+          <img src={noCard} alt="" />
+        </>
       )}
     </ul>
   );
