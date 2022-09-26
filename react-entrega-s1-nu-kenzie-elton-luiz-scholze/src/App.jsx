@@ -3,6 +3,7 @@ import "./App.css";
 import { Form } from "./components/Form";
 import { List } from "./components/List";
 import NuKenzie from "./assets/NuKenzie.svg";
+import { TotalMoney } from "./components/TotalMoney";
 
 function App() {
   const [listTransactions, setListTransactions] = useState([]);
@@ -15,16 +16,21 @@ function App() {
         <button type="button">Início</button>
       </header>
       <main className="container">
-        <Form
-          listTransactions={listTransactions}
-          setListTransactions={setListTransactions}
-        />
-        <List
-          listTransactions={listTransactions}
-          setListTransactions={setListTransactions}
-          setFilter={setFilter}
-          filter={filter}
-        />
+        <section>
+          <Form
+            listTransactions={listTransactions}
+            setListTransactions={setListTransactions}
+          />
+          <TotalMoney listTransactions={listTransactions} />
+        </section>
+        <aside>
+          <List
+            listTransactions={listTransactions}
+            setListTransactions={setListTransactions}
+            setFilter={setFilter}
+            filter={filter}
+          />
+        </aside>
       </main>
     </div>
   );
